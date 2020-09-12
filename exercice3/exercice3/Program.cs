@@ -10,7 +10,10 @@ namespace exercice3
     {
         static void Main(string[] args)
         {
-            string nStr, aStr, bStr;
+            int infini= 0;
+            do
+            {
+                string nStr, aStr, bStr;
             int n, a, b;
             List<double> rangeList=new List<double>();
             do
@@ -30,22 +33,25 @@ namespace exercice3
             double nDouble = Convert.ToDouble(n);
             double k= 1/nDouble;
 
-            for(int i=a; i<b; i++ )
+            for(int i=a; i<=b; i++ )
             {
                 double result=Math.Pow(i , k);
                 if(result % 1 == 0 )
                 {
                     rangeList.Add(result);
-                }                
+                }                     
             }
             
-            Console.Write("Ranger( " + n + " , " + a + " , " + b + " )--->" );
+            Console.Write("Ranger( " + n + " , " + a + " , " + b + " )--->" + rangeList.Count()+"  ===>");
             foreach(double range in rangeList)
             {
-                Console.Write(range);
+                                
                 Console.Write(" | ");
+                Console.Write(range +"^"+n);
             }
             Console.ReadLine();
+            }while(infini==0);
+            
         }
     }
 }
